@@ -33,7 +33,7 @@ const App = () => {
         try {
             const endpoint = query
                 ? `${BASE_URI}/search/movie?include_adult=false&language=en-US&page=1&query=${query}`
-                : `${BASE_URI}/discover/movie?include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
+                : `${BASE_URI}/discover/movie?page=${Math.floor((Math.random() * 450) + 1)}&sort_by=popularity.desc`;
 
             fetch(endpoint, options)
                 .then((res) => res.json())
